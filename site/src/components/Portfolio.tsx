@@ -53,7 +53,7 @@ const items: Item[] = [
   },
   {
     src: "/media/noiva-sorriso-01.jpg",
-    alt: "Noiva sorrindo com vestido de renda",
+    alt: "Retrato com ondas suaves e maquiagem iluminada",
     category: "Noivas & Eventos",
   },
   {
