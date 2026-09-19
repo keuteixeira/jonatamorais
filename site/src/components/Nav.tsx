@@ -52,7 +52,7 @@ export function Nav() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href={site.instagram}
               target="_blank"
@@ -66,9 +66,9 @@ export function Nav() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-cream transition-transform hover:scale-[1.03] md:flex"
+              className="inline-flex items-center gap-1.5 rounded-full bg-ink px-3 py-2 text-xs font-medium text-cream transition-transform hover:scale-[1.03] sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              <WhatsAppIcon className="h-4 w-4" />
+              <WhatsAppIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Agendar meu horário
             </a>
             <button

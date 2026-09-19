@@ -1,4 +1,5 @@
 .DS_Store
+.vercel/
 midias_jonatamorais/
 midias_novas/
 novas2/
@@ -11,3 +12,5 @@ site/.vercel/
 site/.env*
 site/*.tsbuildinfo
 site/next-env.d.ts
+.vercel
+.env*

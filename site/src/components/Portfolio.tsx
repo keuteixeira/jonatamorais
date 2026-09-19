@@ -112,8 +112,14 @@ const categories: Category[] = [
 
 export function Portfolio() {
   const [active, setActive] = useState<Category>("Todos");
+  const [openSrc, setOpenSrc] = useState<string | null>(null);
   const visible =
     active === "Todos" ? items : items.filter((i) => i.category === active);
+
+  function selectCategory(category: Category) {
+    setActive(category);
+    setOpenSrc(null);
+  }
 
   return (
     <section id="portfolio" className="bg-ink py-24 text-cream sm:py-32">
@@ -134,7 +140,7 @@ export function Portfolio() {
               {categories.map((c) => (
                 <button
                   key={c}
-                  onClick={() => setActive(c)}
+                  onClick={() => selectCategory(c)}
                   className={`rounded-full border px-5 py-2 text-sm transition-all ${
                     active === c
                       ? "border-gold bg-gold text-ink"
@@ -158,7 +164,13 @@ export function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.94 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className={`group relative overflow-hidden rounded-2xl ${
+                data-open={openSrc === item.src ? "" : undefined}
+                onClick={() =>
+                  setOpenSrc((current) =>
+                    current === item.src ? null : item.src
+                  )
+                }
+                className={`group relative cursor-pointer overflow-hidden rounded-2xl ${
                   item.wide
                     ? "col-span-2 aspect-[3/2] lg:aspect-auto"
                     : "aspect-[3/4]"
@@ -173,9 +185,9 @@ export function Portfolio() {
                       ? "(max-width: 640px) 100vw, 66vw"
                       : "(max-width: 640px) 50vw, 33vw"
                   }
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06] group-data-[open]:scale-[1.06]"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/80 to-transparent p-4 pt-10 text-xs uppercase tracking-widest text-cream/90 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/80 to-transparent p-4 pt-10 text-xs uppercase tracking-widest text-cream/90 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-data-[open]:translate-y-0 group-data-[open]:opacity-100">
                   {item.category}
                 </figcaption>
               </motion.figure>

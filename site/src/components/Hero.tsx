@@ -34,7 +34,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease, delay: 0.1 }}
             className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-ink/60"
           >
-            Jonata Morais — Maquiagem & Penteado · Fortaleza
+            Jonata Morais · Maquiagem & Penteado · Fortaleza
           </motion.p>
 
           <h1 className="font-display text-[13vw] font-light leading-[0.95] tracking-tight text-ink sm:text-7xl lg:text-[5.2rem]">
