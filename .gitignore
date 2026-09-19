@@ -1,0 +1,13 @@
+.DS_Store
+midias_jonatamorais/
+midias_novas/
+novas2/
+_analysis*/
+logo.png
+site/node_modules/
+site/.next/
+site/out/
+site/.vercel/
+site/.env*
+site/*.tsbuildinfo
+site/next-env.d.ts
