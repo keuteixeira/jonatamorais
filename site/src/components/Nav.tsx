@@ -135,9 +135,10 @@ export function Nav() {
                 href={site.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-center text-sm text-ink/60"
+                className="flex items-center justify-center gap-2 rounded-full border border-ink/20 px-8 py-4 text-base font-medium text-ink"
               >
-                Instagram {site.instagramHandle}
+                <InstagramIcon className="h-5 w-5" />
+                {site.instagramHandle}
               </a>
             </motion.div>
           </motion.div>
